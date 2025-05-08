@@ -54,12 +54,97 @@ DRArmor/
 ├── config.yaml              
 ├── main.py                  
 ├── flower_main.py           
-└── README.md                
+└── README.md   
+```
+---
 
 ## 🔧 Installation
+
 
 1. **Clone the repository**  
    ```bash
    git clone https://github.com/yourusername/DRArmor.git
    cd DRArmor
+   ```
+2. **Create and activate a virtual environment (recommended)**  
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+    ```
+3. **Install dependencies**
+    ```bash
+        pip install -r requirements.txt
+
+    ```
+4. **Prepare datasets**
     
+    Download the datasets and keep inside the `data` directory
+    
+
+---
+
+## 🎯 Usage
+
+### 1. **Native Python FL Loop**
+
+1. Edit `config.yaml` to the desired settings.
+
+2. Run 
+```bash
+    python main.py
+```
+3. Outputs (models, logs) will appear in `logging.output_dir`.
+
+### 2. **Flower Framework**
+
+1. Start the Flower Server
+```bash
+    python flower_main.py
+```
+
+2. Launch Flower Clients
+
+In separate terminals (one per client), run
+```bash
+    export FLWR_CLIENT_ID=0
+    python clients/flower_client_run.py
+```
+## 📝 File Descriptions
+
+- `clients/client.py`: Implements `FLClient` with DRArmor integration.
+- `clients/flower_client.py`, `clients/flower_client_run.py`: Wrap and launch Flower clients.
+- `drarmor/engine.py`: Coordinates detection (LRP/DTD) and defense (prune/DP).
+- `drarmor/lrp_attributor.py`, `drarmor/dtd_attributor.py`: Compute layer-wise relevance scores.
+- `drarmor/defense.py`: Prune or add DP-Gaussian noise to gradients.
+- `loki_attack/loki.py`: Imports and wraps the LOKI attack.
+- `models/*.py`: Keras model definitions for each dataset.
+- `utils/dataset_loader.py`: Load, normalize, and shard datasets.
+- `main.py`: Native Python FL entrypoint using `FederatedServer`.
+- `flower_main.py`: Flower server entrypoint for federated training.
+
+---
+
+## ⚙️ Customization
+
+- **Datasets**: Add loader in `utils/dataset_loader.py` and reference it in `config.yaml`.
+- **Models**: Add a new model in `models/` and map it in `config.yaml`.
+- **XAI Methods**: Implement new attribution methods in `drarmor/`.
+- **Aggregation**: Switch between `fedavg` and `fedsgd` in `config.yaml`.
+- **Defense Actions**: Choose between `prune`, `dp`, or `both` for gradient defense.
+
+---
+
+## 📜 Citation
+
+If you use DRArmor, please cite:
+
+> Meghali Nandi _et al._, “DRArmor: Explainable-AI Defense for Data Reconstruction Attacks in Federated Learning,” _ACM Asia CCS_, 2025.
+
+---
+
+## 🤝 Contributing
+
+- Fork the repository  
+- Create a new feature branch  
+- Submit a Pull Request  
+- We’ll review and merge!

@@ -1,5 +1,3 @@
-# flower_main.py
-
 import yaml
 import flwr as fl
 import numpy as np

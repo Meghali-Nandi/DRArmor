@@ -1,0 +1,73 @@
+
+# -------------------------------------------------------------------
+# Dataset and Data Loading
+# -------------------------------------------------------------------
+dataset:
+  # One of: mnist, cifar10, cifar100, imagenet, cats_v_dogs
+  name: mnist
+  # Root directory for datasets (if using custom download paths)
+  data_dir: ./data
+
+# -------------------------------------------------------------------
+# Federated Learning Setup
+# -------------------------------------------------------------------
+federated:
+  # Total number of client nodes in the simulation
+  num_clients: 200
+  # Number of global aggregation rounds
+  global_rounds: 20
+  # Number of local epochs each client trains per round
+  local_epochs: 1
+  # Mini-batch size for both training and defense routines
+  batch_size: 64
+
+# -------------------------------------------------------------------
+# Aggregation Strategy
+# -------------------------------------------------------------------
+aggregation:
+  # Choose one of: fedavg, fedsgd
+  algorithm: fedavg
+  # Fraction of clients used in each round for training/evaluation
+  fraction_fit: 1.0
+  fraction_eval: 1.0
+
+# -------------------------------------------------------------------
+# Defense Configuration (DRArmor)
+# -------------------------------------------------------------------
+defense:
+  # Attribution method: lrp or dtd
+  attribution_method: dtd
+  # Layer relevance threshold (0.0–1.0) to mark a layer as malicious
+  threshold: 0.5
+  # Defense action: prune, dp, or both
+  action: prune
+  dp:
+    # L2 norm clipping bound for DP-Gaussian
+    clip_norm: 1.0
+    # Gaussian noise multiplier (σ)
+    noise_multiplier: 0.5
+
+# -------------------------------------------------------------------
+# Model & Architecture Parameters
+# -------------------------------------------------------------------
+model:
+  # Map dataset names to model architectures
+  architectures:
+    mnist:     mnist_cnn
+    cifar10:   cifar10_resnet
+    cifar100:  cifar100_resnet
+    imagenet:  imagenet_resnet
+    cats_v_dogs: resnet18
+  # Optional model-specific hyperparameters
+  hyperparameters:
+    learning_rate: 0.01
+    dropout_rate: 0.5
+
+# -------------------------------------------------------------------
+# Logging & Output
+# -------------------------------------------------------------------
+logging:
+  # One of: debug, info, warning, error
+  verbosity: info
+  # Directory for saving models, logs, and figures
+  output_dir: ./output

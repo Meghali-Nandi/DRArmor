@@ -138,7 +138,7 @@ In separate terminals (one per client), run
 
 If you use DRArmor, please cite:
 
-> Meghali Nandi _et al._, “DRArmor: Explainable-AI Defense for Data Reconstruction Attacks in Federated Learning,” _ACM Asia CCS_, 2025.
+> Meghali Nandi _et al._, “Nosy Layers, Noisy Fixes: Tackling DRAs in Federated Learning Systems using Explainable AI,” _ACM Asia CCS_, 2025.
 
 ---
 

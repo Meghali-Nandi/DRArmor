@@ -1,15 +1,16 @@
 # DRArmor - Nosy Layers, Noisy Fixes: Tackling DRAs in Federated Learning Systems using Explainable AI
 
-This repository contains the official implementation of **DRArmor** – a framework for detecting and mitigating data reconstruction attacks (DRAs) in Federated Learning (FL)
+This repository contains the official implementation of **DRArmor** – a framework for detecting and mitigating data reconstruction attacks (DRAs) in Federated Learning (FL).
+
 ---
 
 ## 📄 Reference
 
-**"Nosy Layers, Noisy Fixes: Tackling DRAs in Federated Learning Systems using Explainable AI"**  
-*Meghali Nandi, Arash Shaghaghi, Nazatul Haque Sultan, Gustavo Batista, Raymond Zhao, Sanjay Jha*  
-Published at **ACM AsiaCCS 2025**
-📚 [Read it on ACM](Coming Soon)
-📚 [Read it on ArXiv]([https://arxiv.org/](https://arxiv.org/abs/2505.10942))
+> **"Nosy Layers, Noisy Fixes: Tackling DRAs in Federated Learning Systems using Explainable AI"**  
+> *Meghali Nandi, Arash Shaghaghi, Nazatul Haque Sultan, Gustavo Batista, Raymond Zhao, Sanjay Jha*  
+> Published at **ACM AsiaCCS 2025** (CORE A, acceptance rate: 19.7%)  
+> 📚 [Read it on ACM DL](#) | 📄 [Read it on ArXiv](https://arxiv.org/abs/2505.10942)
+
 
 ---
 

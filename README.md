@@ -149,6 +149,26 @@ In separate terminals (one per client), run
 
 ---
 
+## 🎯 Results
+
+### 🔍 Identifying Malicious Layers  
+![Gradient Analysis Across Datasets](images/lrp.png)  
+*Gradient analysis across datasets, identifying malicious layers at the start of the model with a threshold value of 0.5.*
+
+---
+
+### 🛡️ Post-Mitigation with Differential Privacy  
+![DP Gaussian Noise](images/all_combines_noise.png)  
+*Data reconstructed at the server using DP-Gaussian Noise with σ² = 0.2 after identifying the malicious layers.*
+
+---
+
+### 🧠 Visual Comparison of Reconstructions  
+![Reconstruction Examples](images/pixelated_combined.png)  
+*Each group contains: (1) original image, (2) LoKI-based DRA reconstruction, and (3) our pixelated gradient-based reconstruction after layer detection.*
+
+---
+
 ## 📜 Citation
 
 If you find this work useful, please consider citing our paper:

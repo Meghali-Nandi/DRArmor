@@ -1,5 +1,19 @@
 # DRArmor - Nosy Layers, Noisy Fixes: Tackling DRAs in Federated Learning Systems using Explainable AI
 
+This repository contains the official implementation of **DRArmor** – a framework for detecting and mitigating data reconstruction attacks (DRAs) in Federated Learning (FL)
+---
+
+## 📄 Reference
+
+**"Nosy Layers, Noisy Fixes: Tackling DRAs in Federated Learning Systems using Explainable AI"**  
+*Meghali Nandi, Arash Shaghaghi, Nazatul Haque Sultan, Gustavo Batista, Raymond Zhao, Sanjay Jha*  
+Published at **ACM AsiaCCS 2025**
+📚 [Read it on ACM](Coming Soon)
+📚 [Read it on ArXiv]([https://arxiv.org/](https://arxiv.org/abs/2505.10942))
+
+---
+
+## 📌 Overview
 DRArmor is a modular framework for detecting and mitigating data reconstruction attacks (DRAs) in federated learning (FL). Building on the LOKI attack, DRArmor integrates explainable-AI (XAI) techniques—Layer-wise Relevance Propagation (LRP) and Deep Taylor Decomposition (DTD)—along with a Wasserstein-distance check to identify malicious layers. Once detected, clients can either prune those layers or apply Differential-Privacy (DP) Gaussian noise to their gradients before uploading to the server. DRArmor supports both FedAvg and FedSGD aggregation, and can run under a native Python loop or the Flower FL framework.
 
 ---
@@ -136,15 +150,32 @@ In separate terminals (one per client), run
 
 ## 📜 Citation
 
-If you use DRArmor, please cite:
+If you find this work useful, please consider citing our paper:
 
-> Meghali Nandi _et al._, “Nosy Layers, Noisy Fixes: Tackling DRAs in Federated Learning Systems using Explainable AI,” _ACM Asia CCS_, 2025.
+```bibtex
+@misc{nandi2025nosylayersnoisyfixes,
+      title={Nosy Layers, Noisy Fixes: Tackling DRAs in Federated Learning Systems using Explainable AI}, 
+      author={Meghali Nandi and Arash Shaghaghi and Nazatul Haque Sultan and Gustavo Batista and Raymond K. Zhao and Sanjay Jha},
+      year={2025},
+      eprint={2505.10942},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR},
+      url={https://arxiv.org/abs/2505.10942}, 
+}
+```
+---
+## 📜 License
+
+This project is licensed under the **MIT License**.
 
 ---
+## 📬 Contact
 
-## 🤝 Contributing
+For questions or suggestions, feel free to reach out:
 
-- Fork the repository  
-- Create a new feature branch  
-- Submit a Pull Request  
-- We’ll review and merge!
+- **Meghali Nandi** – [m.nandi@unsw.edu.au](mailto:m.nandi@unsw.edu.au)  
+- **Arash Shaghaghi** – [a.shaghaghi@unsw.edu.au](mailto:a.shaghaghi@unsw.edu.au)
+
+Happy coding! 🚀
+
+
